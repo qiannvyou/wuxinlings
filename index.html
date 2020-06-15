@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>wuxinling</title>
+	</head>
+	<body>
+		<div class="home">
+			<div class="home-title">
+				<img class="logo" src="img/logo@2x.png" />
+				<img class="name" src="img/name@2x.png" />
+				
+				<ul id=list>
+					<li class="filter">生活集</li>
+					<li class="filter">简历集</li>
+					<li class="filter">练习集</li>
+					<li class="filter active">作品集</li>
+					<!-- <li><a href="#">生活集</a></li>
+					<li><a href="#">简历集</a></li>
+					<li><a href="#">练习集</a></li>
+					<li><a href="#">作品集</a></li> -->
+					<li class="clear"></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div class="home-box-line">
+				<div class="home-box" id="show">
+					<div id="mask">
+						<p>婴母知 - APP设计</p>
+					</div>
+				</div>
+				<div class="home-box">
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="home-box-line">
+				<div class="home-box">
+				</div>
+				<div class="home-box">
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="home-bottom">
+				<div class="mailbox" id="mailbox1">
+					<p>15920536309@163.com</p>
+				</div>
+				<div class="mailbox phone" id="mailbox2">
+					<p>1887760xxxx</p>
+				</div>
+				<div class="mailbox wechat" id="mailbox3">
+					<img src="img/wechats.png" />
+				</div>
+				<div class="home-bottom-img">
+					<img id="showing1" src="img/mailbox@2x.png" />
+					<img id="showing2" src="img/phone@2x.png" />
+					<img id="showing3" src="img/wechat@2x.png" />
+					<div class="clear"></div>
+				</div>
+				<p>Copyright © 2020 Wooshinling V1.0</p>
+			</div>
+		</div>
+		
+	</body>
+	<style>
+		.active{
+		    color: #1B1B1B !important;
+		}
+		.mailbox {
+		    width: 200px;
+		    height: 100px;
+		    background-color: #D3D3D3;
+		    position: fixed;
+		    bottom: 180px;
+		    left: 420px;
+			display: none;
+		}
+		.phone{
+			left: 500px;
+		}
+		.wechat{
+			left: 580px;
+			width: 180px;
+			height: 180px;
+		}
+		.wechat img{
+			width: 160px;
+			height: 160px;
+			margin: 10px;
+		}
+		#mask{
+		    width: 585px;
+		    height: 420px;
+		    background-image: url(img/blue@2x.png);
+		    z-index: 1000;
+			display: none;
+		}
+		#mask p{
+			text-align: center;
+			font-size:20px;
+			font-family:PingFang SC;
+			font-weight:500;
+			color:rgba(255,255,255,1);
+			line-height:24px;
+			margin: 0;
+			padding-top: 200px;
+		}
+		.clear{
+			clear: both;
+		}
+		.home{
+			width: 1200px;
+			height: auto;
+			margin: auto;
+		}
+		.logo{
+			width: 66px;
+			height: 66px;
+			float: left;
+		}
+		.name{
+			width: 106px;
+			height: 30px;
+			margin-left: 25px;
+			margin-top: 20px !important;
+			position: absolute;
+			float: left;
+		}
+		.home-title{
+			margin-bottom: 100px;
+		}
+		.home-title ul li{
+			float: right;
+			width: 8%;
+			list-style-type:none;
+			margin-top: 20px;
+			font-size:14px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:#949494;
+			line-height:24px;
+		}
+		.home-box:first-child{
+			background-image: url(img/bg.png);
+			margin-left: 0px;
+		}
+		.home-box{
+			width: 585px;
+			height: 420px;
+			background:rgba(211,211,211,1);
+			background-size: 100%;
+			float: left;
+			margin-left: 30px;
+			margin-top: 30px;
+		}
+		.home-bottom{
+			width:100%;
+			height:200px;
+			background:rgba(242,242,242,1);
+			margin-top: 128px;
+		}
+		.home-bottom p{
+			font-size:16px;
+			font-family:PingFang SC;
+			font-weight:500;
+			color:rgba(126,126,126,1);
+			line-height:24px;
+			text-align: center;
+			margin-top: 40px;
+		}
+		.home-bottom-img{
+			width: 200px;
+			height: auto;
+			margin: auto;
+			padding-top: 54px;
+		}
+		.home-bottom-img img{
+			width: 36px;
+			height: 36px;
+			float: left;
+			margin-left: 46px;
+		}
+		.home-bottom-img img:first-child{
+			margin-left: 0px;
+		}
+	</style>
+	<script>
+	let filter = document.getElementsByClassName("filter")
+	for(let i=0;i<filter.length;i++){
+		filter[i].addEventListener('click',function(){
+			filter[i].classList.add('active')
+			for(let j=0;j<filter.length;j++){
+				if(i!=j){
+					filter[j].classList.remove('active')
+				}
+			}
+		})
+	}
+
+	  var pic=document.getElementById('show')
+	  var pics1=document.getElementById('showing1')
+	  var pics2=document.getElementById('showing2')
+	  var pics3=document.getElementById('showing3')
+	  pic.onmouseenter=function(){
+	    document.getElementById('mask').style.display='block';
+	  };
+	  pic.onmouseleave=function(){
+	    document.getElementById('mask').style.display='none';
+	  }; 
+	  pics1.onmouseenter=function(){
+	    document.getElementById('mailbox1').style.display='block';
+	  };
+	  pics1.onmouseleave=function(){
+	    document.getElementById('mailbox1').style.display='none';
+	  }; 
+	  pics2.onmouseenter=function(){
+	    document.getElementById('mailbox2').style.display='block';
+	  };
+	  pics2.onmouseleave=function(){
+	    document.getElementById('mailbox2').style.display='none';
+	  };
+	  pics3.onmouseenter=function(){
+	    document.getElementById('mailbox3').style.display='block';
+	  };
+	  pics3.onmouseleave=function(){
+	    document.getElementById('mailbox3').style.display='none';
+	  };
+	</script>
+</html>
